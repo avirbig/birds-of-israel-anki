@@ -1,0 +1,459 @@
+{
+    "id": 4,
+    "langId": 1,
+    "name": "פרנקולין שחור",
+    "latinName": "Francolinus francolinus",
+    "shortName": "FRAFRA",
+    "speciesFamilyId": 2,
+    "speciesFamilyName": "תרנגולאים",
+    "ebirdCode": "blkfra",
+    "ebirdTaxon": 1303,
+    "images": [
+        {
+            "type": 2,
+            "path": "https://cms.birds.org.il/Data/Portal Images/Gallformes/פרנקוליןשחור-אלדדאמיר-10.4.17עמקיזרעאל451_1907438638.png",
+            "title": "Birding in israel",
+            "tooltip": "Black Francolin  - 10.4.17 Jezra'el valley",
+            "id": 16066,
+            "name": "Black Francolin - Eldad Amir - 10.4.17"
+        },
+        {
+            "type": 2,
+            "path": "https://cms.birds.org.il/Data/Photographers/Piki Ish-shalom/Black Frankolin - Piki Ish-shalom - 9.4.21 Jezreel valley - Female 451.png",
+            "title": "נקבת פרנקולים צועדת בשדה",
+            "tooltip": "פרנקולין שחור - נקבה - 9.4.21 עמק יזרעאל",
+            "id": 21350,
+            "name": "Black Frankolin - Piki Ish-shalom - 9.4.21 Jezreel"
+        },
+        {
+            "type": 2,
+            "path": "https://cms.birds.org.il/Data/Portal Images/Gallformes/פרנקוליןשחור-1-משהכהן_1914618643.jpg",
+            "title": "Black Francolin - Moshe Cohen - 1",
+            "tooltip": "Black Francolin - Male",
+            "id": 3162,
+            "name": "Black Francolin - Moshe Cohen - 1"
+        },
+        {
+            "type": 2,
+            "path": "https://cms.birds.org.il/Data/Birds/4_זכר ונקבה.jpg",
+            "title": "פרנקולין שחור זכר ונקבה ",
+            "tooltip": "פרנקולין שחור זכר ונקבה",
+            "id": 379,
+            "name": "4_זכר ונקבה.jpg"
+        },
+        {
+            "type": 2,
+            "path": "https://cms.birds.org.il/Data/Portal Images/Gallformes/פרנקוליןשחור-יואבפרלמן-1_915753925.jpg",
+            "title": "פרנקולין שחור - יואב פרלמן - 1",
+            "tooltip": "פרנקולין שחור - זכר",
+            "id": 3514,
+            "name": "פרנקולין שחור - יואב פרלמן - 1"
+        }
+    ],
+    "largeImage": [
+        {
+            "type": 2,
+            "path": "https://cms.birds.org.il/Data/Photographers/Micha Mandel/Black Frankolin - Micha Mandel - 9.4.21 Jezreel valley - 833.png",
+            "title": "פרנקולין שחור - זכר ונקבה",
+            "tooltip": "פרנקולין שחור - 9.4.21 עמק יזרעאל",
+            "id": 21357,
+            "name": "Black Frankolin - Micha Mandel - 9.4.21 Jezreel va"
+        }
+    ],
+    "videos": [
+        {
+            "href": "https://www.youtube.com/watch?v=loolHEFCbkQ&feature=youtu.be",
+            "name": "",
+            "isBlank": false,
+            "isNoFollow": false
+        },
+        {
+            "href": "https://www.youtube.com/watch?v=NSTgpu11Xe4&feature=youtu.be",
+            "name": "",
+            "isBlank": false,
+            "isNoFollow": false
+        },
+        {
+            "href": "https://www.youtube.com/watch?v=ARqjGt7hxg4",
+            "name": "",
+            "isBlank": false,
+            "isNoFollow": false
+        },
+        {
+            "href": "https://www.youtube.com/watch?v=jagmWYzyXnQ",
+            "name": "",
+            "isBlank": false,
+            "isNoFollow": false
+        }
+    ],
+    "sounds": [
+        {
+            "type": 3,
+            "path": "161001",
+            "title": "Song - Black Francolin",
+            "tooltip": "",
+            "id": 1226,
+            "name": "Song"
+        },
+        {
+            "type": 3,
+            "path": "123022",
+            "title": "song - Black Francolin",
+            "tooltip": "",
+            "id": 1467,
+            "name": "song"
+        },
+        {
+            "type": 3,
+            "path": "134454",
+            "title": "song - Black Francolin",
+            "tooltip": "",
+            "id": 1646,
+            "name": "song"
+        }
+    ],
+    "tags": [
+        {
+            "id": 702,
+            "name": "תרנגולאים"
+        },
+        {
+            "id": 4,
+            "name": "פרנקולין שחור"
+        }
+    ],
+    "relatedSpecies": [
+        {
+            "id": 2,
+            "name": "חוגלת סלעים",
+            "imageUrl": {
+                "type": 2,
+                "path": "https://cms.birds.org.il/Data/Portal Images/Gallformes/חוגלתסלעים-עזראחדד-2_2065790441.jpg",
+                "title": "Chukar - Ezra Hadad - 1",
+                "tooltip": "Chukar ",
+                "id": 6139,
+                "name": "Chukar - Ezra Hadad - 1"
+            },
+            "largeImageUrl": null,
+            "latinName": "Alectoris chukar",
+            "speciesFamilyId": 2,
+            "speciesFamily": "תרנגולאים",
+            "tags": [
+                {
+                    "id": 702,
+                    "name": "תרנגולאים"
+                },
+                {
+                    "id": 2,
+                    "name": "חוגלת סלעים"
+                }
+            ],
+            "conservationLevelIL": "LC",
+            "category": 6,
+            "shortDescription": "תמיד הן מבוהלות וממהרות להסתתר... בזמן של שבריר שנייה, קצת קשה להבחין כמה היא יפה. ",
+            "openEncyclopediaPage": true
+        },
+        {
+            "id": 152,
+            "name": "חובה קטנה",
+            "imageUrl": {
+                "type": 2,
+                "path": "https://cms.birds.org.il/Data/Portal Images/Gruiformes/חובהקטנה-עזראחדד-2-לטקסט_1726203514.JPG",
+                "title": "חובה קטנה - עזרא חדד - 2 ",
+                "tooltip": "חובה קטנה בשפלת יהודה ",
+                "id": 7109,
+                "name": "חובה קטנה - עזרא חדד - 2 "
+            },
+            "largeImageUrl": null,
+            "latinName": "Tetrax tetrax",
+            "speciesFamilyId": 25,
+            "speciesFamily": "חובתיים",
+            "tags": [
+                {
+                    "id": 708,
+                    "name": "עגוראים"
+                },
+                {
+                    "id": 152,
+                    "name": "חובה קטנה"
+                }
+            ],
+            "conservationLevelIL": "LC",
+            "category": 6,
+            "shortDescription": "החובה הקטנה בסכנה גדולה. בתי הגידול שלה נעלמים, מפריעים לה לקנן ובמקומות רבים מנסים לצוד אותה. ",
+            "openEncyclopediaPage": true
+        }
+    ],
+    "moreFromFamily": [
+        {
+            "id": 3,
+            "name": "קורא מדברי",
+            "imageUrl": {
+                "type": 2,
+                "path": "https://cms.birds.org.il/Data/Portal Images/Gallformes/קוראמדברי-אבימאיר-4_1580151222.jpg",
+                "title": "Sand Partridge - Avi Meir - 4",
+                "tooltip": "Sand Partridge",
+                "id": 6449,
+                "name": "Sand Partridge - Avi Meir - 4"
+            },
+            "largeImageUrl": null,
+            "latinName": "Ammoperdix heyi",
+            "speciesFamilyId": 2,
+            "speciesFamily": "תרנגולאים",
+            "tags": [
+                {
+                    "id": 702,
+                    "name": "תרנגולאים"
+                },
+                {
+                    "id": 3,
+                    "name": "קורא"
+                }
+            ],
+            "conservationLevelIL": "LC",
+            "category": 6,
+            "shortDescription": "הקורא מרבה ללכת ולרוץ. הוא מדלג בזריזות מסלע לסלע ויעוף... רק אם קיימת סכנה ברורה ומיידית.",
+            "openEncyclopediaPage": true
+        },
+        {
+            "id": 5,
+            "name": "שליו נודד",
+            "imageUrl": {
+                "type": 2,
+                "path": "https://cms.birds.org.il/Data/Birds/Avi Meir/שליו_1393556670.jpg",
+                "title": "שליו נודד חדש -  אבי מאיר",
+                "tooltip": "שליו נודד ",
+                "id": 1886,
+                "name": "שליו נודד חדש -  אבי מאיר"
+            },
+            "largeImageUrl": null,
+            "latinName": "Coturnix coturnix",
+            "speciesFamilyId": 2,
+            "speciesFamily": "תרנגולאים",
+            "tags": [
+                {
+                    "id": 702,
+                    "name": "תרנגולאים"
+                },
+                {
+                    "id": 5,
+                    "name": "שליו נודד"
+                }
+            ],
+            "conservationLevelIL": "LC",
+            "category": 6,
+            "shortDescription": "השליו הנודד, באמת נודד. אבל אם זה היה תלוי בו, הוא היה הולך מאירופה לאפריקה ברגל.",
+            "openEncyclopediaPage": true
+        },
+        {
+            "id": 4,
+            "name": "פרנקולין שחור",
+            "imageUrl": {
+                "type": 2,
+                "path": "https://cms.birds.org.il/Data/Portal Images/Gallformes/פרנקוליןשחור-אלדדאמיר-10.4.17עמקיזרעאל451_1907438638.png",
+                "title": "Birding in israel",
+                "tooltip": "Black Francolin  - 10.4.17 Jezra'el valley",
+                "id": 16066,
+                "name": "Black Francolin - Eldad Amir - 10.4.17"
+            },
+            "largeImageUrl": null,
+            "latinName": "Francolinus francolinus",
+            "speciesFamilyId": 2,
+            "speciesFamily": "תרנגולאים",
+            "tags": [
+                {
+                    "id": 702,
+                    "name": "תרנגולאים"
+                },
+                {
+                    "id": 4,
+                    "name": "פרנקולין שחור"
+                }
+            ],
+            "conservationLevelIL": "VU",
+            "category": 6,
+            "shortDescription": "לבני סדרת התרנגולאים לבוש נאה במיוחד. נכון שעל טעם ועל ריח אין להתווכח אבל הפרנקולין הוא היפה מכולם.",
+            "openEncyclopediaPage": true
+        }
+    ],
+    "linkedArticles": [
+        {
+            "id": 99,
+            "slug": "כתבה-יואב-פרלמן-פרנקולין-השחור",
+            "typeId": 1,
+            "title": "צאו לספור את הפרנקולין השחור",
+            "author": "יואב פרלמן",
+            "articleDate": "2014-02-26T00:00:00",
+            "shortDescription": "עזרו לנו לעקוב אחר הפרנקולין השחור...",
+            "imageUrl": {
+                "type": 2,
+                "path": "https://cms.birds.org.il/Data/Portal Images/Gallformes/פרנקוליןשחור-1-משהכהן_1914618643.jpg",
+                "title": "Black Francolin - Moshe Cohen - 1",
+                "tooltip": "Black Francolin - Male",
+                "id": 3162,
+                "name": "Black Francolin - Moshe Cohen - 1"
+            },
+            "tags": [
+                {
+                    "id": 4,
+                    "name": "פרנקולין שחור"
+                }
+            ],
+            "name": "כתבה - יואב פרלמן - פרנקולין השחור"
+        },
+        {
+            "id": 158,
+            "slug": "שבוע-13-עמק-בית-שאן",
+            "typeId": 4,
+            "title": "אני הולך... לבית שאן",
+            "author": "ברק גרניט",
+            "articleDate": "2014-04-27T00:00:00",
+            "shortDescription": "עמק בית-שאן פנטסטי לציפורים. גם באביב.",
+            "imageUrl": {
+                "type": 2,
+                "path": "https://cms.birds.org.il/Data/Portal Images/Passeriformes/דרורירדן-טולימלק-30.10.18עמקהירדן451_1619518993.png",
+                "title": "דרור ירדן על ענף עץ",
+                "tooltip": "דרור ירדן - 30.10.18 עמק הירדן",
+                "id": 16201,
+                "name": "דרור ירדן - טולי מלק - 30.10.18 עמק הירדן 451"
+            },
+            "tags": [
+                {
+                    "id": 4,
+                    "name": "פרנקולין שחור"
+                },
+                {
+                    "id": 487,
+                    "name": "דרור ירדן"
+                },
+                {
+                    "id": 155,
+                    "name": "ברודית קטנה"
+                },
+                {
+                    "id": 532,
+                    "name": "גיבתון גנים"
+                }
+            ],
+            "name": "שבוע 13 - עמק בית-שאן"
+        }
+    ],
+    "rba": 30,
+    "validationCode": 0,
+    "conservationLevelIL": "VU",
+    "conservationLevelEU": "LC",
+    "conservationLevelWo": "LC",
+    "category": 6,
+    "showRedBook": true,
+    "displayEncyclopedia": true,
+    "openEncyclopediaPage": true,
+    "shortDescription": "לבני סדרת התרנגולאים לבוש נאה במיוחד. נכון שעל טעם ועל ריח אין להתווכח אבל הפרנקולין הוא היפה מכולם.",
+    "statusDescription": null,
+    "description": "<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">אין לטעות בו. לזכר ראש וחזה שחורים, &quot;קולר&quot; חום חלוד ולחי לבנה בולטת.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">הגב העליון וצדי החזה מנוקדים בלבן, הבטן שחורה ובחלקה התחתון נקודות לבנות בצורת האות U. הנקבה מנוקדת כולה בצבעי חום-שחור ומעט לבן, ראשה אחיד יותר, צבעו חום בהיר והעורף חלודי.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">כנפי שני הזוויגים חומות ומציגות דגם מעניין שנראה כמו &quot;משולש בתוך משולש&quot; - בצבעי חום ושחור,עם שוליים בהירים בולטים יחסית.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">כשהפרונקולין ניצב זקוף הוא נראה גדול יחסית, אבל לרוב הוא נסתר במעבה הצמחייה ולכן קשה מאוד להבחין בו. הפרנקולין, כמו רבים אחרים מסדרת התרנגולאים, מעדיף להתקדם בעזרת רגליו מאשר בכנפיו.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t&nbsp;</p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">גם אם מתקרבת סכנה, הפרנקולין נוהג &quot;להתחפף&quot; במהירות ובדיסקרטיות על רגליו, ורק בלית ברירה הוא &quot;יורה&quot; את עצמו ונמלט מהמקום התעופה.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">המעוף של הפרנקולין השחור נמוך, מהיר וישר (דוך! בשפה הצבאית...). התעופה משלבת חבתות זריזות ומיד לאחריהן גלישה מהירה בכנפיים מוטות מטה. זנבו של הזכר שחור ואילו זה של הנקבה מפוספס בפסי רוחב בצבעי חום-שחור.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t&nbsp;</p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">נקבת פרנקולין ש&quot;מציצה&quot; מתוך הצמחייה עלולה לבלבל את הצופה עם חובה קטנה. אבל נקבת הפרנקולין נבדלת מהחובה בכתם הקרמי האחיד שבצדי ראשה. הפרנקולין גדול מחוגלת הסלעים ומגוון ממנה בצבעיו.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">בארץ מצוי תת המין המערבי- </span><span style=\"font-size: 11pt; font-family: Arial; font-style: italic; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">F. f. francolinus</span><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">. אין שונות ממשית בין הפרטים מאותו זוויג. את הפרנקולין אפשר לראות באיזורי מישור יבשים אבל ליד מקור מים זמין. הם נפוצים בשדות מעובדים ובשדות עם צמחיה גבוהה. גם לצד גדות נחלים סבוכות.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t&nbsp;</p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">מידות</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">אורך גוף: 30 - 36 ס&quot;מ. מוטת כנף: 40 - 50 ס&quot;מ. משקל: 450 ג&#39;.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">פירוש השם המדעי </span><span style=\"font-size: 11pt; font-family: Arial; font-style: italic; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">francolinus</span><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\"> מקורו מהשם שהצרפתים העניקו לעוף זה - פרנקולין.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">האיטלקים קוראים לו פרנקולינו - &quot;תרנגולת קטנה&quot;. ג&#39;ון ריי - אבי תולדות הטבע האנגלי, כותב: &quot;הם נקראים על ידי האיטלקים francolini כמו בצרפתית - &quot;תרנגול חופש&quot; וזאת הודות להגנה שניתנה להם על ידי הנסיכה - ולמורת רוחם של פשוטי העם.&nbsp;&nbsp;&nbsp;</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">שם בערבית - קאלא טיטר</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t&nbsp;</p>\r\n<h2 dir=\"rtl\" style=\"line-height: 1.38; text-align: right; margin-top: 0pt; margin-bottom: 0pt;\">\r\n\t<span style=\"color:#000000;\"><em><strong><span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">תפוצה ומגמות אוכלוסין</span></span></strong></em></span></h2>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">תת המין המערבי (פרנקולינוס) המצוי בארץ, יציב ומקנן גם בטורקיה, קפריסין, איראן ועיראק.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t&nbsp;</p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">בישראל</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">בישראל הפרנקולין השחור יציב, מצוי עד &quot;לא שכיח&quot; באזור עמק הירדן, עמק החולה, וחודר לאט מערבה בחזרה לעמק יזרעאל, שם היה מצוי בעבר.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">אוכלוסייתו בארץ נתונה לעליות ולמורדות רבים. מצד אחד, הרחבת השטחים החקלאיים &quot;מציעה&quot; לפרנקולין שפע של מקומות חיות נוחים ומתאימים, ומצד שני, הפרנקולין נחשק בתור עוף ציד.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;text-align: right;margin-top:0pt;margin-bottom:0pt;\">\r\n\t<span id=\"docs-internal-guid-ade3be10-7fff-3240-c682-de80999b4c8b\"><span style=\"font-size: 11pt; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">קיימות הפרעות רבות נוספות, הקשורות לניהול השטחים בהם מצוי הפרנקולין -&nbsp; נוכחות בני אדם וכלים חקלאיים. החקלאות גם מושכת שפע של טורפים אל האזור, אבל בינתיים האוכלוסייה נמצאת במגמת עלייה.</span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;margin-top:0pt;margin-bottom:0pt;text-align: right;\">\r\n\t&nbsp;</p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;margin-top:0pt;margin-bottom:0pt;text-align: right;\">\r\n\t<span style=\"color:#000000;\"><em><strong><span style=\"font-size:14px;\"><span id=\"docs-internal-guid-12023d09-7fff-170c-f712-119718043410\"><span style=\"font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">מידע כללי</span></span></span></strong></em></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;margin-top:0pt;margin-bottom:0pt;text-align: right;\">\r\n\t<span style=\"font-size:14px;\"><span id=\"docs-internal-guid-12023d09-7fff-170c-f712-119718043410\"><span style=\"font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">כאמור, הפרנקולין הוא עוף ביישן מאוד, אבל בעונת הקינון הזכרים נראים, ובעיקר נשמעים, לאורך כל היום. הזכר נוהג לעמוד במקום בולט - &quot;תל&quot; קטן, תלולית או אפילו ענף עץ ושם, לעיני כול (מי שמחפש), הוא קורא את קריאתו הרמה: &quot;קליק, צ&#39;יק צ&#39;יק צ&#39;ירקיק...&quot; או &quot;קיק, קיק, קיק קוויי קוויייי קוויי...&quot; הנשמעת למרחוק.</span></span></span></p>\r\n<p dir=\"rtl\" style=\"line-height:1.38;margin-top:0pt;margin-bottom:0pt;text-align: right;\">\r\n\t<span style=\"font-size:14px;\"><span id=\"docs-internal-guid-12023d09-7fff-170c-f712-119718043410\"><span style=\"font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">נקבת הפרנקולין מטילה 8 - 12 ביצים ועליהן היא דוגרת לבדה למשך 18 - 19 ימים והצעירים נשארים עם הוריהם במהלך החורף הראשון לחייהם.</span></span></span></p>\r\n<p dir=\"rtl\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;\">\r\n\t<span style=\"font-size:14px;\"><span><span style=\"font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\"><img alt=\"\" src=\"https://cms.birds.org.il/Data/Arad/Shmates/Art/Black%20Francolin%20-%20Zeev%20Labinger%20-%20Spring%202021%20Art%20360.png\" style=\"width: 360px; height: 265px; margin-top: 6px; margin-bottom: 6px;\" /></span></span></span></p>\r\n<p dir=\"rtl\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;\">\r\n\t<span style=\"color:#000000;\"><em><span style=\"font-size:12px;\">הציור היפה שצייר זאב לבינג&#39;ר פורסם בפוסט: </span></em></span><em><span style=\"font-size:12px;\"><a href=\"https://www.birds.org.il/he/blog/id/5/1158\" target=\"_blank\"><span style=\"color:#000000;\"><u>&quot;סיפור אופטימי על תרנגול מזמר&quot;</u></span></a></span></em><span style=\"color:#000000;\"><em><span style=\"font-size:12px;\"> </span></em></span></p>\r\n<p dir=\"rtl\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;\">\r\n\t<span style=\"color:#000000;\"><em><span style=\"font-size:12px;\">מתוך בלוג הצפרות </span></em></span><em><span style=\"font-size:12px;\"><a href=\"https://www.birds.org.il/he/blog/id/5/0\" target=\"_blank\"><span style=\"color:#000000;\"><u>&quot;מחברות ישנות אינן משקרות&quot;</u></span></a></span></em><span style=\"color:#000000;\"><em><span style=\"font-size:12px;\"> של דן אלון - מנהל מרכז הצפרות הישראלי</span></em></span></p>\r\n<p dir=\"rtl\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;\">\r\n\t&nbsp;</p>\r\n",
+    "links": [
+        {
+            "href": "https://www.birds.org.il/he/blogPost-page.aspx?blgId=2&bpstID=13",
+            "name": "\"פרס נחמה\" - הצפר אבנר רינות מסייר בעמק יזרעאל. מתוך הבלוג - \"צפר בשטח\" - 15.12.16",
+            "isBlank": true,
+            "isNoFollow": false
+        },
+        {
+            "href": "https://www.birds.org.il/he/blog/id/28/788",
+            "name": "הפרנקולין השחור במדור \"פול ווליום\"",
+            "isBlank": true,
+            "isNoFollow": false
+        }
+    ],
+    "moreLinkedSpeciesTitle": "",
+    "moreLinkesTitle": "",
+    "moreRelatedFamilySpeciesTitle": "",
+    "latestObservations": [
+        {
+            "speciesId": 4,
+            "date": "2025-09-19T00:00:00",
+            "location": "Hazore'a fishponds בריכות הזורע",
+            "speciesCount": 5,
+            "observerName": "ebird reports"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-18T00:00:00",
+            "location": "Jezreel Valley - general area עמק יזרעאל אזור כללי",
+            "speciesCount": 2,
+            "observerName": "ebird reports"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-18T00:00:00",
+            "location": "Ginnegar גניגר",
+            "speciesCount": 1,
+            "observerName": "עמית גולדשטיין"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-16T00:00:00",
+            "location": "Ginnegar גניגר",
+            "speciesCount": 5,
+            "observerName": "ebird reports"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-15T00:00:00",
+            "location": "Kfar Baruh Reservoir מאגר כפר ברוך",
+            "speciesCount": 2,
+            "observerName": "יואב פרלמן"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-14T00:00:00",
+            "location": "Ginnegar גניגר",
+            "speciesCount": 1,
+            "observerName": "אוהד שרר"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-13T00:00:00",
+            "location": "Harod Reservoir מאגר חרוד",
+            "speciesCount": 1,
+            "observerName": "ebird reports"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-12T00:00:00",
+            "location": "Kfar Baruh Reservoir מאגר כפר ברוך",
+            "speciesCount": 4,
+            "observerName": "ebird reports"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-11T00:00:00",
+            "location": "דרך ללא שם, מחוז הצפון, IL (32.636, 35.296)",
+            "speciesCount": 1,
+            "observerName": "ebird reports"
+        },
+        {
+            "speciesId": 4,
+            "date": "2025-09-10T00:00:00",
+            "location": "Ginnegar גניגר",
+            "speciesCount": 1,
+            "observerName": "יהונתן בן-ארויה"
+        }
+    ],
+    "isSensitiveSpecies": false,
+    "imageUrl": {
+        "type": 2,
+        "path": "https://cms.birds.org.il/Data/Portal Images/Gallformes/פרנקוליןשחור-אלדדאמיר-10.4.17עמקיזרעאל451_1907438638.png",
+        "title": "Birding in israel",
+        "tooltip": "Black Francolin  - 10.4.17 Jezra'el valley",
+        "id": 16066,
+        "name": "Black Francolin - Eldad Amir - 10.4.17"
+    },
+    "largeImageUrl": {
+        "type": 2,
+        "path": "https://cms.birds.org.il/Data/Photographers/Micha Mandel/Black Frankolin - Micha Mandel - 9.4.21 Jezreel valley - 833.png",
+        "title": "פרנקולין שחור - זכר ונקבה",
+        "tooltip": "פרנקולין שחור - 9.4.21 עמק יזרעאל",
+        "id": 21357,
+        "name": "Black Frankolin - Micha Mandel - 9.4.21 Jezreel va"
+    }
+}

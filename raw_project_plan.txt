@@ -1,0 +1,267 @@
+i want to scrape the following website birding information in order to make me anki memorization cards
+so that i will be able to recognize birds according to their pictures
+
+the website is mostly in hebrew, i also want to use the birds hebrew names.
+
+i want to use the data in order to produce a database on my pc to collect the bird name and its pictures and later use it to create a card
+in it i will present one of the birds pictures and i will try to guess the name.
+so that if a bird has 3 pictures i will have 3 cards for each picture.
+
+this is the website root with all the data: https://www.birds.org.il/he/species-families
+lets pick one family of birds:https://www.birds.org.il/he/species-family/2
+the name of this family is "תרנגולאים" and its in the html object: 
+<span _ngcontent-lwr-c117="" class="bc-item"><span _ngcontent-lwr-c117="" class="t-b">תרנגולאים</span></span>
+here you can find it inside a more "higher" html element
+<app-breadcrumbs _ngcontent-lwr-c118="" _nghost-lwr-c117="">
+   <div _ngcontent-lwr-c117="" class="grid">
+      <div _ngcontent-lwr-c117="" class="breadcrumbs">
+         <div _ngcontent-lwr-c117="" class="show-for-tablet">
+            <p _ngcontent-lwr-c117="" class="R bc-row">
+               <span _ngcontent-lwr-c117="" class="bc-item"><a _ngcontent-lwr-c117="" href="/he"><span _ngcontent-lwr-c117="" class="c-blue single-breadcrumb">עמוד הבית</span></a><span _ngcontent-lwr-c117="">&nbsp;/&nbsp;</span></span><span _ngcontent-lwr-c117="" class="bc-item"><a _ngcontent-lwr-c117="" href="he/species-families/"><span _ngcontent-lwr-c117="" class="c-blue">ציפורי ישראל</span><span _ngcontent-lwr-c117="">&nbsp;/&nbsp;</span></a></span><!----><span _ngcontent-lwr-c117="" class="bc-item"><span _ngcontent-lwr-c117="" class="t-b">תרנגולאים</span></span>
+            </p>
+            <!---->
+         </div>
+         <div _ngcontent-lwr-c117="" class="hide-for-tablet">
+            <p _ngcontent-lwr-c117="" class="R bc-row">
+               <span _ngcontent-lwr-c117="" class="bc-item"><a _ngcontent-lwr-c117="" href="/he"><span _ngcontent-lwr-c117="" class="c-blue single-breadcrumb"><i _ngcontent-lwr-c117="" class="fas fa-home"></i></span></a><span _ngcontent-lwr-c117="">&nbsp;/&nbsp;</span></span>
+               <span _ngcontent-lwr-c117="" class="bc-item">
+                  <!----><span _ngcontent-lwr-c117=""><a _ngcontent-lwr-c117="" href="he/species-families/"><span _ngcontent-lwr-c117="" class="c-blue">ציפורי ישראל</span><span _ngcontent-lwr-c117="">&nbsp;/&nbsp;</span></a></span><!---->
+               </span>
+               <!----><span _ngcontent-lwr-c117="" class="bc-item"><span _ngcontent-lwr-c117="" class="t-b">תרנגולאים</span></span>
+            </p>
+            <!---->
+         </div>
+      </div>
+      <!---->
+   </div>
+</app-breadcrumbs>
+
+this family has 4 species (in israel)
+im attaching here the html element of the list, it has the name and link to each species
+<div _ngcontent-xgj-c65="" name="species" class="species-flex grid">
+   <div _ngcontent-xgj-c65="">
+      <app-tile _ngcontent-xgj-c65="" _nghost-xgj-c41="">
+         <div _ngcontent-xgj-c41="" class="small-true tile">
+            <a _ngcontent-xgj-c41="" href="/he/species-page/2">
+               <div _ngcontent-xgj-c41="" class="tile-shadow-box tile-box-flex">
+                  <div _ngcontent-xgj-c41="" class="tile-img-wrapper tile-wrapper-flex full-div">
+                     <img _ngcontent-xgj-c41="" class="tile-img full-div" src="https://cms.birds.org.il/Data/Portal Images/Gallformes/חוגלתסלעים-עזראחדד-2_2065790441.jpg" alt="Chukar - Ezra Hadad - 1" title="חוגלת סלעים"><!---->
+                     <div _ngcontent-xgj-c41="" class="tile-caption tile-wrapper-flex full-div">
+                        <p _ngcontent-xgj-c41="" class="tile-badge item-md-wrapper base-t-16 c-white t-b"><span _ngcontent-xgj-c41="" class="green tile-badge-color tile-badge-txt">תרנגולאים</span></p>
+                        <!---->
+                        <h2 _ngcontent-xgj-c41="" class="tile-title title-t-22 c-white t-b">חוגלת סלעים</h2>
+                        <!---->
+                        <div _ngcontent-xgj-c41="" class="tile-md-wrapper base-t-16 c-white">
+                           <span _ngcontent-xgj-c41="" class="border-R italic-true tile-md">Alectoris chukar</span><!----><!---->
+                        </div>
+                     </div>
+                  </div>
+                  <div _ngcontent-xgj-c41="" class="tile-data-wrapper tile-sr-only">
+                     <!---->
+                     <div _ngcontent-xgj-c41="" class="tile-text base-t-16">תמיד הן מבוהלות וממהרות להסתתר... בזמן של שבריר שנייה, קצת קשה להבחין כמה היא יפה. </div>
+                     <!---->
+                     <div _ngcontent-xgj-c41="" class="tile-bottom">
+                        <!---->
+                        <div _ngcontent-xgj-c41="" class="tile-goto-items">
+            <a _ngcontent-xgj-c41="" href="/he/species-page/2"><span _ngcontent-xgj-c41=""><i _ngcontent-xgj-c41="" title="להמשך קריאה" class="R dir fa-angle-double-left fas read-more-icon"></i><!----></span></a><a _ngcontent-xgj-c41="" href="/en/species-page/2"><span _ngcontent-xgj-c41=""><!----></span></a></div></div><div _ngcontent-xgj-c41="" style="display: none;">חוגלת סלעים, Alectoris chukar</div></div></div><!----></a><!----><!---->
+         </div>
+      </app-tile>
+   </div>
+   <div _ngcontent-xgj-c65="">
+      <app-tile _ngcontent-xgj-c65="" _nghost-xgj-c41="">
+         <div _ngcontent-xgj-c41="" class="small-true tile">
+            <a _ngcontent-xgj-c41="" href="/he/species-page/3">
+               <div _ngcontent-xgj-c41="" class="tile-shadow-box tile-box-flex">
+                  <div _ngcontent-xgj-c41="" class="tile-img-wrapper tile-wrapper-flex full-div">
+                     <img _ngcontent-xgj-c41="" class="tile-img full-div" src="https://cms.birds.org.il/Data/Portal Images/Gallformes/קוראמדברי-אבימאיר-4_1580151222.jpg" alt="Sand Partridge - Avi Meir - 4" title="קורא מדברי"><!---->
+                     <div _ngcontent-xgj-c41="" class="tile-caption tile-wrapper-flex full-div">
+                        <p _ngcontent-xgj-c41="" class="tile-badge item-md-wrapper base-t-16 c-white t-b"><span _ngcontent-xgj-c41="" class="green tile-badge-color tile-badge-txt">תרנגולאים</span></p>
+                        <!---->
+                        <h2 _ngcontent-xgj-c41="" class="tile-title title-t-22 c-white t-b">קורא מדברי</h2>
+                        <!---->
+                        <div _ngcontent-xgj-c41="" class="tile-md-wrapper base-t-16 c-white">
+                           <span _ngcontent-xgj-c41="" class="border-R italic-true tile-md">Ammoperdix heyi</span><!----><!---->
+                        </div>
+                     </div>
+                  </div>
+                  <div _ngcontent-xgj-c41="" class="tile-data-wrapper tile-sr-only">
+                     <!---->
+                     <div _ngcontent-xgj-c41="" class="tile-text base-t-16">הקורא מרבה ללכת ולרוץ. הוא מדלג בזריזות מסלע לסלע ויעוף... רק אם קיימת סכנה ברורה ומיידית.</div>
+                     <!---->
+                     <div _ngcontent-xgj-c41="" class="tile-bottom">
+                        <!---->
+                        <div _ngcontent-xgj-c41="" class="tile-goto-items">
+            <a _ngcontent-xgj-c41="" href="/he/species-page/3"><span _ngcontent-xgj-c41=""><i _ngcontent-xgj-c41="" title="להמשך קריאה" class="R dir fa-angle-double-left fas read-more-icon"></i><!----></span></a><a _ngcontent-xgj-c41="" href="/en/species-page/3"><span _ngcontent-xgj-c41=""><!----></span></a></div></div><div _ngcontent-xgj-c41="" style="display: none;">קורא מדברי, Ammoperdix heyi</div></div></div><!----></a><!----><!---->
+         </div>
+      </app-tile>
+   </div>
+   <div _ngcontent-xgj-c65="">
+      <app-tile _ngcontent-xgj-c65="" _nghost-xgj-c41="">
+         <div _ngcontent-xgj-c41="" class="small-true tile">
+            <a _ngcontent-xgj-c41="" href="/he/species-page/4">
+               <div _ngcontent-xgj-c41="" class="tile-shadow-box tile-box-flex">
+                  <div _ngcontent-xgj-c41="" class="tile-img-wrapper tile-wrapper-flex full-div">
+                     <img _ngcontent-xgj-c41="" class="tile-img full-div" src="https://cms.birds.org.il/Data/Portal Images/Gallformes/פרנקוליןשחור-אלדדאמיר-10.4.17עמקיזרעאל451_1907438638.png" alt="Black Francolin - Eldad Amir - 10.4.17" title="פרנקולין שחור"><!---->
+                     <div _ngcontent-xgj-c41="" class="tile-caption tile-wrapper-flex full-div">
+                        <p _ngcontent-xgj-c41="" class="tile-badge item-md-wrapper base-t-16 c-white t-b"><span _ngcontent-xgj-c41="" class="green tile-badge-color tile-badge-txt">תרנגולאים</span></p>
+                        <!---->
+                        <h2 _ngcontent-xgj-c41="" class="tile-title title-t-22 c-white t-b">פרנקולין שחור</h2>
+                        <!---->
+                        <div _ngcontent-xgj-c41="" class="tile-md-wrapper base-t-16 c-white">
+                           <span _ngcontent-xgj-c41="" class="border-R italic-true tile-md">Francolinus francolinus</span><!----><!---->
+                        </div>
+                     </div>
+                  </div>
+                  <div _ngcontent-xgj-c41="" class="tile-data-wrapper tile-sr-only">
+                     <!---->
+                     <div _ngcontent-xgj-c41="" class="tile-text base-t-16">לבני סדרת התרנגולאים לבוש נאה במיוחד. נכון שעל טעם ועל ריח אין להתווכח אבל הפרנקולין הוא...</div>
+                     <!---->
+                     <div _ngcontent-xgj-c41="" class="tile-bottom">
+                        <!---->
+                        <div _ngcontent-xgj-c41="" class="tile-goto-items">
+            <a _ngcontent-xgj-c41="" href="/he/species-page/4"><span _ngcontent-xgj-c41=""><i _ngcontent-xgj-c41="" title="להמשך קריאה" class="R dir fa-angle-double-left fas read-more-icon"></i><!----></span></a><a _ngcontent-xgj-c41="" href="/en/species-page/4"><span _ngcontent-xgj-c41=""><!----></span></a></div></div><div _ngcontent-xgj-c41="" style="display: none;">פרנקולין שחור, Francolinus francolinus</div></div></div><!----></a><!----><!---->
+         </div>
+      </app-tile>
+   </div>
+   <div _ngcontent-xgj-c65="">
+      <app-tile _ngcontent-xgj-c65="" _nghost-xgj-c41="">
+         <div _ngcontent-xgj-c41="" class="small-true tile">
+            <a _ngcontent-xgj-c41="" href="/he/species-page/5">
+               <div _ngcontent-xgj-c41="" class="tile-shadow-box tile-box-flex">
+                  <div _ngcontent-xgj-c41="" class="tile-img-wrapper tile-wrapper-flex full-div">
+                     <img _ngcontent-xgj-c41="" class="tile-img full-div" src="https://cms.birds.org.il/Data/Birds/Avi Meir/שליו_1393556670.jpg" alt="שליו נודד חדש -  אבי מאיר" title="שליו נודד"><!---->
+                     <div _ngcontent-xgj-c41="" class="tile-caption tile-wrapper-flex full-div">
+                        <p _ngcontent-xgj-c41="" class="tile-badge item-md-wrapper base-t-16 c-white t-b"><span _ngcontent-xgj-c41="" class="green tile-badge-color tile-badge-txt">תרנגולאים</span></p>
+                        <!---->
+                        <h2 _ngcontent-xgj-c41="" class="tile-title title-t-22 c-white t-b">שליו נודד</h2>
+                        <!---->
+                        <div _ngcontent-xgj-c41="" class="tile-md-wrapper base-t-16 c-white">
+                           <span _ngcontent-xgj-c41="" class="border-R italic-true tile-md">Coturnix coturnix</span><!----><!---->
+                        </div>
+                     </div>
+                  </div>
+                  <div _ngcontent-xgj-c41="" class="tile-data-wrapper tile-sr-only">
+                     <!---->
+                     <div _ngcontent-xgj-c41="" class="tile-text base-t-16">השליו הנודד, באמת נודד. אבל אם זה היה תלוי בו, הוא היה הולך מאירופה לאפריקה ברגל.</div>
+                     <!---->
+                     <div _ngcontent-xgj-c41="" class="tile-bottom">
+                        <!---->
+                        <div _ngcontent-xgj-c41="" class="tile-goto-items">
+            <a _ngcontent-xgj-c41="" href="/he/species-page/5"><span _ngcontent-xgj-c41=""><i _ngcontent-xgj-c41="" title="להמשך קריאה" class="R dir fa-angle-double-left fas read-more-icon"></i><!----></span></a><a _ngcontent-xgj-c41="" href="/en/species-page/5"><span _ngcontent-xgj-c41=""><!----></span></a></div></div><div _ngcontent-xgj-c41="" style="display: none;">שליו נודד, Coturnix coturnix</div></div></div><!----></a><!----><!---->
+         </div>
+      </app-tile>
+   </div>
+   <!---->
+</div>
+
+i will choose one of the species, this is its link: https://www.birds.org.il/he/species-page/4/species-description
+inside the image element
+<div class="image-element">
+   <div class="media-btn-container">
+      <div class="media-btn image-gallery-btn hand"><i class="fas fa-camera media-btn-icon"></i></div>
+      <!---->
+      <div class="media-btn audio-gallery-btn hand"><i class="fas fa-volume-up media-btn-icon"></i></div>
+      <!---->
+      <div class="media-btn video-gallery-btn hand"><i class="fab fa-youtube media-btn-icon"></i></div>
+      <!---->
+   </div>
+   <div>
+      <p class="R c-white species-title-note species-type-caption t-b">תרנגולאים</p>
+      <h1 class="R c-white species-title t-b">פרנקולין שחור</h1>
+      <div class="img-md-wrapper base-t-16 c-white">
+         <h2 class="border-R img-md italic-true">Francolinus francolinus</h2>
+      </div>
+   </div>
+</div>
+
+you can find the name of the species (also inside the link in the species list from the family page):
+<h1 class="R c-white species-title t-b">פרנקולין שחור</h1>
+and the latin name:
+<h2 class="border-R img-md italic-true">Francolinus francolinus</h2>
+
+also inside the image element you can find a link to the image gallery of this species:
+<div class="media-btn image-gallery-btn hand ng-star-inserted"><i class="fas fa-camera media-btn-icon"></i></div>
+theres also a link to the image page in the following element:
+<a _ngcontent-xgj-c70="" routerlink="species-moreinfo" routerlinkactive="active-route" class="tab title-t-28 tab-more-info active-route" href="/he/species-page/4/species-moreinfo"><i _ngcontent-xgj-c70="" class="fas fa-info-circle c-brown"></i> מידע נוסף </a>
+the gallery address is: https://www.birds.org.il/he/species-page/4/species-moreinfo
+and the pictures gallery list are 
+<app-image-thumb-gallery _ngcontent-xgj-c86="" _nghost-xgj-c83="" class="ng-tns-c83-2 ng-star-inserted">
+   <div _ngcontent-xgj-c83="" class="gallery-wrapper ng-tns-c83-2">
+      <ngx-gallery _ngcontent-xgj-c83="" class="ng-tns-c83-2 R" _nghost-xgj-c79="" style="width: 100%; height: 191px;">
+         <div _ngcontent-xgj-c79="" class="ngx-gallery-layout thumbnails-bottom">
+            <!---->
+            <ngx-gallery-thumbnails _ngcontent-xgj-c79="" _nghost-xgj-c78="" style="margin-top: 10px; margin-bottom: 0px; height: 100%;" class="ng-star-inserted">
+               <div _ngcontent-xgj-c78="" class="ngx-gallery-thumbnail-size-contain ngx-gallery-thumbnails-wrapper">
+                  <div _ngcontent-xgj-c78="" class="ngx-gallery-thumbnails" style="transform: translateX(0px); margin-left: 0px;">
+                     <a _ngcontent-xgj-c78="" class="ngx-gallery-thumbnail ngx-gallery-active ngx-gallery-clickable ng-star-inserted" href="#" target="_blank" style="background-image: url(&quot;https://cms.birds.org.il/Data/Portal%20Images/Gallformes/פרנקוליןשחור-אלדדאמיר-10.4.17עמקיזרעאל451_1907438638.png&quot;); width: calc(20% - 9.6px); height: calc(100% + 0px); left: calc(0% + 0px); top: calc(0% + 0px);">
+                        <div _ngcontent-xgj-c78="" class="ngx-gallery-icons-wrapper">
+                           <!---->
+                        </div>
+                        <!---->
+                     </a>
+                     <a _ngcontent-xgj-c78="" class="ngx-gallery-thumbnail ngx-gallery-clickable ng-star-inserted" href="#" target="_blank" style="background-image: url(&quot;https://cms.birds.org.il/Data/Photographers/Piki%20Ish-shalom/Black%20Frankolin%20-%20Piki%20Ish-shalom%20-%209.4.21%20Jezreel%20valley%20-%20Female%20451.png&quot;); width: calc(20% - 9.6px); height: calc(100% + 0px); left: calc(20% + 2.4px); top: calc(0% + 0px);">
+                        <div _ngcontent-xgj-c78="" class="ngx-gallery-icons-wrapper">
+                           <!---->
+                        </div>
+                        <!---->
+                     </a>
+                     <a _ngcontent-xgj-c78="" class="ngx-gallery-thumbnail ngx-gallery-clickable ng-star-inserted" href="#" target="_blank" style="background-image: url(&quot;https://cms.birds.org.il/Data/Portal%20Images/Gallformes/פרנקוליןשחור-1-משהכהן_1914618643.jpg&quot;); width: calc(20% - 9.6px); height: calc(100% + 0px); left: calc(40% + 4.8px); top: calc(0% + 0px);">
+                        <div _ngcontent-xgj-c78="" class="ngx-gallery-icons-wrapper">
+                           <!---->
+                        </div>
+                        <!---->
+                     </a>
+                     <a _ngcontent-xgj-c78="" class="ngx-gallery-thumbnail ngx-gallery-clickable ng-star-inserted" href="#" target="_blank" style="background-image: url(&quot;https://cms.birds.org.il/Data/Birds/4_זכר%20ונקבה.jpg&quot;); width: calc(20% - 9.6px); height: calc(100% + 0px); left: calc(60% + 7.2px); top: calc(0% + 0px);">
+                        <div _ngcontent-xgj-c78="" class="ngx-gallery-icons-wrapper">
+                           <!---->
+                        </div>
+                        <!---->
+                     </a>
+                     <a _ngcontent-xgj-c78="" class="ngx-gallery-thumbnail ngx-gallery-clickable ng-star-inserted" href="#" target="_blank" style="background-image: url(&quot;https://cms.birds.org.il/Data/Portal%20Images/Gallformes/פרנקוליןשחור-יואבפרלמן-1_915753925.jpg&quot;); width: calc(20% - 9.6px); height: calc(100% + 0px); left: calc(80% + 9.6px); top: calc(0% + 0px);">
+                        <div _ngcontent-xgj-c78="" class="ngx-gallery-icons-wrapper">
+                           <!---->
+                        </div>
+                        <!---->
+                     </a>
+                     <!---->
+                  </div>
+               </div>
+               <!---->
+            </ngx-gallery-thumbnails>
+            <!---->
+            <ngx-gallery-preview _ngcontent-xgj-c79="" _nghost-xgj-c76="">
+               <ngx-gallery-arrows _ngcontent-xgj-c76="" _nghost-xgj-c81="" class="ng-star-inserted">
+                  <div _ngcontent-xgj-c81="" class="ngx-gallery-arrow-wrapper ngx-gallery-arrow-left">
+                     <div _ngcontent-xgj-c81="" aria-hidden="true" class="ngx-gallery-icon ngx-gallery-arrow ngx-gallery-disabled"><i _ngcontent-xgj-c81="" class="fa fa-chevron-left ngx-gallery-icon-content"></i></div>
+                  </div>
+                  <div _ngcontent-xgj-c81="" class="ngx-gallery-arrow-wrapper ngx-gallery-arrow-right">
+                     <div _ngcontent-xgj-c81="" aria-hidden="true" class="ngx-gallery-icon ngx-gallery-arrow"><i _ngcontent-xgj-c81="" class="fa fa-chevron-right ngx-gallery-icon-content"></i></div>
+                  </div>
+               </ngx-gallery-arrows>
+               <!---->
+               <div _ngcontent-xgj-c76="" class="ngx-gallery-preview-top">
+                  <div _ngcontent-xgj-c76="" class="ngx-gallery-preview-icons">
+                     <!----><!----><!----><!----><!----><!----><!---->
+                     <ngx-gallery-action _ngcontent-xgj-c76="" _nghost-xgj-c80="">
+                        <div _ngcontent-xgj-c80="" aria-hidden="true" class="ngx-gallery-icon" title=""><i _ngcontent-xgj-c80="" class="fa fa-times-circle ngx-gallery-close ngx-gallery-icon-content"></i></div>
+                     </ngx-gallery-action>
+                  </div>
+               </div>
+               <div _ngcontent-xgj-c76="" class="ngx-spinner-wrapper ngx-gallery-center"><i _ngcontent-xgj-c76="" aria-hidden="true" class="fa fa-3x fa-fw fa-pulse fa-spinner ngx-gallery-icon ngx-gallery-spinner"></i></div>
+               <div _ngcontent-xgj-c76="" class="ngx-gallery-preview-wrapper">
+                  <div _ngcontent-xgj-c76="" class="ngx-gallery-preview-img-wrapper">
+                     <!----><!---->
+                  </div>
+                  <!---->
+               </div>
+            </ngx-gallery-preview>
+         </div>
+      </ngx-gallery>
+   </div>
+</app-image-thumb-gallery>
+
+these are the pictures for every species that im interested at
+
+so this is the data examples i think represents the whole data.
+i want you to make me a clear and reletavily easy development plan. if i need tools to automatically navigate those websites
+or do i can somehow download all the data relevant from the database itself through maybe GET html request or other way that im not aware off.
