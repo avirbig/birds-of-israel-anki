@@ -1,0 +1,15 @@
+# Ignore Python cache and virtual environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+# Ignore SQLite DB and media
+birds.sqlite3
+media/
+# Ignore Anki deck output
+anki_deck.apkg
+anki_deck.csv
+# Ignore text files with discovered IDs
+valid_species_ids.txt

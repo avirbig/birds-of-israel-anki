@@ -6,7 +6,7 @@ import time
 
 API_URL = "https://www.birds.org.il/api/{}"
 START_ID = 1
-END_ID = 300  # Adjust as needed
+END_ID = 1000  # Adjust as needed
 TIMEOUT = 2  # seconds between requests
 
 VALID_IDS_FILE = "valid_species_ids.txt"
@@ -18,7 +18,7 @@ def is_valid_species(species_id):
             data = resp.json()
             # Basic check: must have a Hebrew name and Latin name
             if data.get("name") and data.get("latinName"):
-                return True
+                return data.get("name")
         return False
     except Exception:
         return False
@@ -27,8 +27,9 @@ def discover_species_ids(start=START_ID, end=END_ID):
     valid_ids = []
     for species_id in range(start, end + 1):
         print(f"Checking species ID {species_id}...")
-        if is_valid_species(species_id):
-            print(f"  Valid: {species_id}")
+        name = is_valid_species(species_id)
+        if name:
+            print(f"  Valid: {species_id} - {name}")
             valid_ids.append(species_id)
         else:
             print(f"  Invalid: {species_id}")
