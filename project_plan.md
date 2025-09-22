@@ -3,7 +3,7 @@
 ## 1. Goal
 Help me build a tool that:
 - Collects structured bird data from **birds.org.il** using its **JSON API**.
-- Stores Hebrew name, Latin name, family, images, and audio/video when available.
+- Stores Hebrew name, Latin name, family, images, and audio when available.
 - Organizes images so that each image → one Anki flashcard.
 - Generates an **Anki deck** (APKG or CSV) with:
   - **Front**: bird image

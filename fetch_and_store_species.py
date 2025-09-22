@@ -7,7 +7,7 @@ import json
 import os
 import time
 
-API_URL = "https://www.birds.org.il/api/{}"
+API_URL = "https://www.birds.org.il/he/species-page/{}/species-description"
 VALID_IDS_FILE = "valid_species_ids.txt"
 DB_FILE = "birds.sqlite3"
 TIMEOUT = 2

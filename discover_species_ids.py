@@ -4,7 +4,7 @@ Bird species ID discovery script for birds.org.il API
 import requests
 import time
 
-API_URL = "https://www.birds.org.il/api/{}"
+API_URL = "https://api.birds.org.il/api/species/byid/he/{}"
 START_ID = 1
 END_ID = 1000  # Adjust as needed
 TIMEOUT = 2  # seconds between requests
@@ -13,9 +13,19 @@ VALID_IDS_FILE = "valid_species_ids.txt"
 
 def is_valid_species(species_id):
     try:
-        resp = requests.get(API_URL.format(species_id), timeout=10)
-        if resp.status_code == 200 and resp.headers.get('Content-Type', '').startswith('application/json'):
-            data = resp.json()
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Language": "he-IL,he;q=0.9,en-US;q=0.8,en;q=0.7,ar;q=0.6",
+            "Referer": "https://www.birds.org.il/",
+            "Origin": "https://www.birds.org.il",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+        }
+        resp = requests.get(API_URL.format(species_id), headers=headers, timeout=10)
+        if resp.status_code == 200:
+            try:
+                data = resp.json()
+            except Exception:
+                return False
             # Basic check: must have a Hebrew name and Latin name
             if data.get("name") and data.get("latinName"):
                 return data.get("name")
