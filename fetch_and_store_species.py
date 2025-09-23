@@ -1,16 +1,19 @@
 """
 Fetch and parse bird species data from birds.org.il API and store in SQLite
 """
+
 import requests
 import sqlite3
 import json
 import os
 import time
+import concurrent.futures
 
-API_URL = "https://www.birds.org.il/he/species-page/{}/species-description"
+API_URL = "https://api.birds.org.il/api/species/byid/he/{}"
 VALID_IDS_FILE = "valid_species_ids.txt"
 DB_FILE = "birds.sqlite3"
 TIMEOUT = 2
+REQUEST_TIMEOUT = 30
 
 CREATE_SPECIES_TABLE = """
 CREATE TABLE IF NOT EXISTS species (
@@ -43,20 +46,33 @@ CREATE TABLE IF NOT EXISTS sounds (
 
 def fetch_species_data(species_id):
     try:
-        resp = requests.get(API_URL.format(species_id), timeout=10)
-        if resp.status_code == 200 and resp.headers.get('Content-Type', '').startswith('application/json'):
-            return resp.json()
-    except Exception:
-        pass
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Language": "he-IL,he;q=0.9,en-US;q=0.8,en;q=0.7,ar;q=0.6",
+            "Referer": "https://www.birds.org.il/",
+            "Origin": "https://www.birds.org.il",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+        }
+        resp = requests.get(API_URL.format(species_id), headers=headers, timeout=REQUEST_TIMEOUT)
+        if resp.status_code == 200:
+            try:
+                return resp.json()
+            except Exception as e:
+                print(f"  Error parsing JSON for {species_id}: {e}")
+        else:
+            print(f"  HTTP error {resp.status_code} for {species_id}")
+    except Exception as e:
+        print(f"  Exception for {species_id}: {e}")
     return None
 
-def parse_and_store(conn, data):
+def parse_and_store(data):
     species_id = data.get("id")
     hebrew_name = data.get("name")
     latin_name = data.get("latinName")
     family = data.get("speciesFamilyName")
     description = data.get("description")
     conservation = data.get("conservationLevelIL")
+    conn = sqlite3.connect(DB_FILE)
     conn.execute("INSERT OR IGNORE INTO species (id, hebrew_name, latin_name, family, description, conservation) VALUES (?, ?, ?, ?, ?, ?)",
                  (species_id, hebrew_name, latin_name, family, description, conservation))
     # Images
@@ -71,26 +87,65 @@ def parse_and_store(conn, data):
         url = snd.get("path")
         conn.execute("INSERT INTO sounds (species_id, url, file_path) VALUES (?, ?, ?)" , (species_id, url, None))
     conn.commit()
+    conn.close()
+    if not os.path.exists(VALID_IDS_FILE):
+        print(f"Missing {VALID_IDS_FILE}. Run discover_species_ids.py first.")
+        return
+    else:
+        print(f"{VALID_IDS_FILE} already exists. Skipping species ID discovery.")
+
+    with open(VALID_IDS_FILE, encoding="utf-8") as f:
+        ids = [int(line.strip()) for line in f if line.strip().isdigit()]
+
+    # Create tables once before threading and enable WAL mode
+    conn = sqlite3.connect(DB_FILE)
+    conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA busy_timeout=5000;")
+    conn.execute(CREATE_SPECIES_TABLE)
+    conn.execute(CREATE_IMAGES_TABLE)
+    conn.execute(CREATE_SOUNDS_TABLE)
+    conn.close()
+def fetch_and_store_one(species_id):
+        # Open a single connection per thread
+        conn = sqlite3.connect(DB_FILE)
+        cur = conn.cursor()
+        cur.execute("SELECT 1 FROM species WHERE id=?", (species_id,))
+        if cur.fetchone():
+            print(f"Skipping already-fetched species: {species_id}")
+            conn.close()
+            return
+        data = fetch_species_data(species_id)
+        if data:
+            hebrew_name = data.get("name", "")
+            print(f"Fetched {species_id} - {hebrew_name}")
+            parse_and_store(data)
+        else:
+            print(f"  Failed to fetch {species_id}")
+        conn.close()
+
 
 def main():
     if not os.path.exists(VALID_IDS_FILE):
         print(f"Missing {VALID_IDS_FILE}. Run discover_species_ids.py first.")
         return
+    else:
+        print(f"{VALID_IDS_FILE} already exists. Skipping species ID discovery.")
+
+    with open(VALID_IDS_FILE, encoding="utf-8") as f:
+        ids = [int(line.strip()) for line in f if line.strip().isdigit()]
+
+    # Create tables once before threading and enable WAL mode
     conn = sqlite3.connect(DB_FILE)
+    conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA busy_timeout=5000;")
     conn.execute(CREATE_SPECIES_TABLE)
     conn.execute(CREATE_IMAGES_TABLE)
     conn.execute(CREATE_SOUNDS_TABLE)
-    with open(VALID_IDS_FILE, encoding="utf-8") as f:
-        ids = [int(line.strip()) for line in f if line.strip().isdigit()]
-    for species_id in ids:
-        print(f"Fetching species {species_id}...")
-        data = fetch_species_data(species_id)
-        if data:
-            parse_and_store(conn, data)
-        else:
-            print(f"  Failed to fetch {species_id}")
-        time.sleep(TIMEOUT)
     conn.close()
+
+    print(f"Fetching species data concurrently...")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        list(executor.map(fetch_and_store_one, ids))
     print(f"Done. Data saved to {DB_FILE}")
 
 if __name__ == "__main__":

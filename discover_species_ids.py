@@ -6,8 +6,8 @@ import time
 
 API_URL = "https://api.birds.org.il/api/species/byid/he/{}"
 START_ID = 1
-END_ID = 1000  # Adjust as needed
-TIMEOUT = 2  # seconds between requests
+END_ID = 854  # Last observed ID
+TIMEOUT = 0.5  # seconds between requests (faster)
 
 VALID_IDS_FILE = "valid_species_ids.txt"
 
@@ -34,16 +34,20 @@ def is_valid_species(species_id):
         return False
 
 def discover_species_ids(start=START_ID, end=END_ID):
+    import concurrent.futures
     valid_ids = []
-    for species_id in range(start, end + 1):
-        print(f"Checking species ID {species_id}...")
+    def check_id(species_id):
         name = is_valid_species(species_id)
         if name:
             print(f"  Valid: {species_id} - {name}")
-            valid_ids.append(species_id)
+            return species_id
         else:
             print(f"  Invalid: {species_id}")
-        time.sleep(TIMEOUT)
+            return None
+    print(f"Checking species IDs {start} to {end}...")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        results = list(executor.map(check_id, range(start, end + 1)))
+    valid_ids = [sid for sid in results if sid]
     with open(VALID_IDS_FILE, "w", encoding="utf-8") as f:
         for sid in valid_ids:
             f.write(f"{sid}\n")
