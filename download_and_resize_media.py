@@ -29,18 +29,34 @@ def download_and_resize_image(url, save_path):
         print(f"Failed to download/resize {url}: {e}")
     return False
 
-def download_sound(url, save_path):
-    # The API provides only a sound ID, not a direct URL. You may need to adjust this for real downloads.
-    # Placeholder: just save the ID as a text file for now.
+def download_sound(sound_id, save_path):
+    """
+    Download the actual .mp3 file from xeno-canto.org using the sound ID.
+    """
+    # The download URL is https://xeno-canto.org/{sound_id}/download
+    sound_url = f"https://xeno-canto.org/{sound_id}/download"
     try:
-        with open(save_path, "w", encoding="utf-8") as f:
-            f.write(url)
-        return True
+        resp = requests.get(sound_url, timeout=15)
+        if resp.status_code == 200:
+            with open(save_path, "wb") as f:
+                f.write(resp.content)
+            return True
+        else:
+            print(f"Failed to download sound {sound_url}: HTTP {resp.status_code}")
     except Exception as e:
-        print(f"Failed to save sound {url}: {e}")
+        print(f"Failed to download sound {sound_url}: {e}")
     return False
 
 def main():
+    # Clean up old .mp3 and .txt files from media directory
+    print("Cleaning up old .mp3 and .txt files from media directory...")
+    for root, dirs, files in os.walk(MEDIA_ROOT):
+        for file in files:
+            if file.endswith('.mp3') or file.endswith('.txt'):
+                try:
+                    os.remove(os.path.join(root, file))
+                except Exception as e:
+                    print(f"Failed to remove {file}: {e}")
     import concurrent.futures
     conn = sqlite3.connect(DB_FILE)
     cur = conn.cursor()
@@ -65,7 +81,8 @@ def main():
         # Sounds
         cur.execute("SELECT id, url FROM sounds WHERE species_id=?", (species_id,))
         for snd_id, url in cur.fetchall():
-            snd_name = f"sound_{snd_id}.txt"
+            # url is actually the sound ID as a string
+            snd_name = f"sound_{snd_id}.mp3"
             snd_path = os.path.join(base_dir, snd_name)
             if os.path.exists(snd_path):
                 print(f"Skipping existing sound: {snd_path}")
@@ -83,6 +100,7 @@ def main():
                 conn2.close()
                 print(f"Saved image: {path}")
         elif typ == "sound":
+            # url is actually the sound ID
             if download_sound(url, path):
                 conn2 = sqlite3.connect(DB_FILE)
                 conn2.execute("UPDATE sounds SET file_path=? WHERE id=?", (path, file_id))

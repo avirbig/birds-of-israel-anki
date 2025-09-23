@@ -9,7 +9,6 @@ venv/
 birds.sqlite3
 media/
 # Ignore Anki deck output
-anki_deck.apkg
-anki_deck.csv
+*.apkg
 # Ignore text files with discovered IDs
 valid_species_ids.txt

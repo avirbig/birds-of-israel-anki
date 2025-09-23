@@ -8,11 +8,12 @@ import genanki
 DB_FILE = "birds.sqlite3"
 DECK_ID = 2059400110  # Random, but must be consistent for updates
 DECK_NAME = "Birds of Israel"
+
 MODEL_ID = 1607392319  # Random, must be unique
 MEDIA_ROOT = "media"
 OUTPUT_FILE = "Birds_of_Israel.apkg"
 
-# Define the card model (template) for Anki
+# Define the card model (template) for Anki, now with Sounds field
 my_model = genanki.Model(
     MODEL_ID,
     'Bird Card',
@@ -21,6 +22,7 @@ my_model = genanki.Model(
         {'name': 'HebrewName'},
         {'name': 'LatinName'},
         {'name': 'Family'},
+        {'name': 'Sounds'},
     ],
     templates=[
         {
@@ -31,7 +33,8 @@ my_model = genanki.Model(
                 <hr>
                 <b>{{HebrewName}}</b><br>
                 <i>{{LatinName}}</i><br>
-                <span>{{Family}}</span>
+                <span>{{Family}}</span><br>
+                {{Sounds}}
             ''',
         },
     ],
@@ -47,6 +50,9 @@ my_model = genanki.Model(
             max-width: 100%;
             height: auto;
         }
+        audio {
+            margin-top: 10px;
+        }
     '''
 )
 
@@ -56,6 +62,7 @@ def main():
     Each card will have an image on the front, and bird names/family on the back.
     All images are included as media in the APKG file.
     """
+
     conn = sqlite3.connect(DB_FILE)
     cur = conn.cursor()
     deck = genanki.Deck(DECK_ID, DECK_NAME)
@@ -63,7 +70,7 @@ def main():
 
     # Query all images and their species info
     cur.execute("""
-        SELECT images.file_path, species.hebrew_name, species.latin_name, species.family
+        SELECT images.file_path, species.id, species.hebrew_name, species.latin_name, species.family
         FROM images
         JOIN species ON images.species_id = species.id
         WHERE images.file_path IS NOT NULL AND images.file_path != ''
@@ -71,13 +78,23 @@ def main():
     rows = cur.fetchall()
     print(f"Found {len(rows)} images for Anki deck generation.")
 
-    for img_path, hebrew_name, latin_name, family in rows:
+    for img_path, species_id, hebrew_name, latin_name, family in rows:
         if not os.path.exists(img_path):
             print(f"Warning: Image file missing: {img_path}")
             continue
         # Anki expects just the filename in the <img> tag, not the full path
         img_filename = os.path.basename(img_path)
         media_files.append(img_path)
+
+        # Get all sound files for this species
+        cur.execute("SELECT file_path FROM sounds WHERE species_id=? AND file_path IS NOT NULL AND file_path != ''", (species_id,))
+        sound_paths = [row[0] for row in cur.fetchall() if os.path.exists(row[0])]
+        sound_filenames = [os.path.basename(p) for p in sound_paths]
+        # Build the Anki sound field: [sound:filename1.mp3][sound:filename2.mp3] ...
+        sounds_field = ''.join([f'[sound:{fname}]' for fname in sound_filenames])
+        # Add all sound files to media
+        media_files.extend(sound_paths)
+
         note = genanki.Note(
             model=my_model,
             fields=[
@@ -85,12 +102,16 @@ def main():
                 hebrew_name or '',
                 latin_name or '',
                 family or '',
+                sounds_field,
             ]
         )
         deck.add_note(note)
 
+    # Remove duplicates from media_files
+    media_files = list(dict.fromkeys(media_files))
+
     # Package the deck with media
-    print(f"Packaging deck with {len(media_files)} images...")
+    print(f"Packaging deck with {len(media_files)} media files (images + sounds)...")
     genanki.Package(deck, media_files).write_to_file(OUTPUT_FILE)
     print(f"Anki deck generated: {OUTPUT_FILE}")
 
