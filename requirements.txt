@@ -1,2 +1,5 @@
+pillow
+
 requests
 pillow
+genanki

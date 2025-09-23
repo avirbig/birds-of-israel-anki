@@ -41,13 +41,15 @@ def download_sound(url, save_path):
     return False
 
 def main():
+    import concurrent.futures
     conn = sqlite3.connect(DB_FILE)
     cur = conn.cursor()
     cur.execute("SELECT id, family, latin_name FROM species")
     species_list = cur.fetchall()
+    download_tasks = []
     for species_id, family, latin_name in species_list:
-        family_dir = family if family else "UnknownFamily"
-        species_dir = latin_name if latin_name else f"species_{species_id}"
+        family_dir = family.strip() if family else "UnknownFamily"
+        species_dir = latin_name.strip() if latin_name else f"species_{species_id}"
         base_dir = os.path.join(MEDIA_ROOT, family_dir, species_dir)
         ensure_dir(base_dir)
         # Images
@@ -56,20 +58,41 @@ def main():
             ext = os.path.splitext(url)[-1] or ".jpg"
             img_name = f"img_{img_id}{ext}"
             img_path = os.path.join(base_dir, img_name)
-            if download_and_resize_image(url, img_path):
-                conn.execute("UPDATE images SET file_path=? WHERE id=?", (img_path, img_id))
-                print(f"Saved image: {img_path}")
-            time.sleep(TIMEOUT)
+            if os.path.exists(img_path):
+                print(f"Skipping existing image: {img_path}")
+                continue
+            download_tasks.append(("image", img_id, url, img_path))
         # Sounds
         cur.execute("SELECT id, url FROM sounds WHERE species_id=?", (species_id,))
         for snd_id, url in cur.fetchall():
             snd_name = f"sound_{snd_id}.txt"
             snd_path = os.path.join(base_dir, snd_name)
-            if download_sound(url, snd_path):
-                conn.execute("UPDATE sounds SET file_path=? WHERE id=?", (snd_path, snd_id))
-                print(f"Saved sound: {snd_path}")
-            time.sleep(TIMEOUT)
-        conn.commit()
+            if os.path.exists(snd_path):
+                print(f"Skipping existing sound: {snd_path}")
+                continue
+            download_tasks.append(("sound", snd_id, url, snd_path))
+
+    def process_task(task):
+        typ, file_id, url, path = task
+        if typ == "image":
+            if download_and_resize_image(url, path):
+                # Open a new connection for thread safety
+                conn2 = sqlite3.connect(DB_FILE)
+                conn2.execute("UPDATE images SET file_path=? WHERE id=?", (path, file_id))
+                conn2.commit()
+                conn2.close()
+                print(f"Saved image: {path}")
+        elif typ == "sound":
+            if download_sound(url, path):
+                conn2 = sqlite3.connect(DB_FILE)
+                conn2.execute("UPDATE sounds SET file_path=? WHERE id=?", (path, file_id))
+                conn2.commit()
+                conn2.close()
+                print(f"Saved sound: {path}")
+
+    print(f"Starting media downloads with multithreading...")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        list(executor.map(process_task, download_tasks))
     conn.close()
     print("Done downloading and resizing media.")
 
