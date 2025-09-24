@@ -115,5 +115,61 @@ def main():
     genanki.Package(deck, media_files).write_to_file(OUTPUT_FILE)
     print(f"Anki deck generated: {OUTPUT_FILE}")
 
+    # --- Create per-family decks ---
+    print("Creating per-family decks...")
+    # ensure decks directory exists
+    decks_dir = "decks"
+    os.makedirs(decks_dir, exist_ok=True)
+    # Build mapping: family -> list of rows (image_path, species_id, hebrew, latin, family)
+    family_map = {}
+    for img_path, species_id, hebrew_name, latin_name, family in rows:
+        fam_key = family or 'UnknownFamily'
+        family_map.setdefault(fam_key, []).append((img_path, species_id, hebrew_name, latin_name, family))
+
+    def sanitize_name(name):
+        # Simple filename-safe sanitizer
+        return ''.join(c for c in name if c.isalnum() or c in (' ', '-', '_')).rstrip().replace(' ', '_')
+
+    import hashlib
+
+    for fam, items in family_map.items():
+        # skip small families
+        if len(items) < 3:
+            print(f"Skipping family '{fam}' with only {len(items)} items (<3)")
+            continue
+        fam_safe = sanitize_name(fam)
+        # Deterministic deck id from family name
+        fam_hash = int(hashlib.sha1(fam.encode('utf-8')).hexdigest()[:8], 16)
+        fam_deck_id = DECK_ID + fam_hash
+        fam_deck_name = f"Birds of Israel - {fam}"
+        fam_deck = genanki.Deck(fam_deck_id, fam_deck_name)
+        fam_media = []
+        for img_path, species_id, hebrew_name, latin_name, family in items:
+            if not os.path.exists(img_path):
+                continue
+            img_filename = os.path.basename(img_path)
+            fam_media.append(img_path)
+            cur.execute("SELECT file_path FROM sounds WHERE species_id=? AND file_path IS NOT NULL AND file_path != ''", (species_id,))
+            sound_paths = [row[0] for row in cur.fetchall() if os.path.exists(row[0])]
+            sound_filenames = [os.path.basename(p) for p in sound_paths]
+            sounds_field = ''.join([f'[sound:{fname}]' for fname in sound_filenames])
+            fam_media.extend(sound_paths)
+            note = genanki.Note(
+                model=my_model,
+                fields=[
+                    f'<img src="{img_filename}">',
+                    hebrew_name or '',
+                    latin_name or '',
+                    family or '',
+                    sounds_field,
+                ]
+            )
+            fam_deck.add_note(note)
+        fam_media = list(dict.fromkeys(fam_media))
+    fam_filename = os.path.join(decks_dir, f"Birds_of_Israel_{fam_safe}.apkg")
+    print(f"Packaging family deck '{fam_deck_name}' with {len(fam_media)} media files -> {fam_filename}")
+    genanki.Package(fam_deck, fam_media).write_to_file(fam_filename)
+    print("Per-family decks created.")
+
 if __name__ == "__main__":
     main()
