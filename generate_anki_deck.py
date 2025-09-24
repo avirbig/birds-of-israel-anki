@@ -13,11 +13,15 @@ MODEL_ID = 1607392319  # Random, must be unique
 MEDIA_ROOT = "media"
 OUTPUT_FILE = "Birds_of_Israel.apkg"
 
-# Define the card model (template) for Anki, now with Sounds field
+# Define the card model (template) for Anki, now with Sounds field.
+# IMPORTANT: Field order matters for Anki duplicate detection. We make the
+# first field a small unique ID (UID) per image so Anki's duplicate detector
+# won't merge cards just because the image binary/tag is identical.
 my_model = genanki.Model(
     MODEL_ID,
     'Bird Card',
     fields=[
+        {'name': 'UID'},
         {'name': 'Image'},
         {'name': 'HebrewName'},
         {'name': 'LatinName'},
@@ -95,9 +99,14 @@ def main():
         # Add all sound files to media
         media_files.extend(sound_paths)
 
+        # Use image filename as a short unique ID (Field 1) to avoid Anki
+        # merging notes on identical Field 1 checksums. The image HTML is kept
+        # in Field 2 so the card shows correctly.
+        uid = img_filename
         note = genanki.Note(
             model=my_model,
             fields=[
+                uid,
                 f'<img src="{img_filename}">',  # Image field
                 hebrew_name or '',
                 latin_name or '',
@@ -154,9 +163,11 @@ def main():
             sound_filenames = [os.path.basename(p) for p in sound_paths]
             sounds_field = ''.join([f'[sound:{fname}]' for fname in sound_filenames])
             fam_media.extend(sound_paths)
+            uid = img_filename
             note = genanki.Note(
                 model=my_model,
                 fields=[
+                    uid,
                     f'<img src="{img_filename}">',
                     hebrew_name or '',
                     latin_name or '',
@@ -166,9 +177,9 @@ def main():
             )
             fam_deck.add_note(note)
         fam_media = list(dict.fromkeys(fam_media))
-    fam_filename = os.path.join(decks_dir, f"Birds_of_Israel_{fam_safe}.apkg")
-    print(f"Packaging family deck '{fam_deck_name}' with {len(fam_media)} media files -> {fam_filename}")
-    genanki.Package(fam_deck, fam_media).write_to_file(fam_filename)
+        fam_filename = os.path.join(decks_dir, f"Birds_of_Israel_{fam_safe}.apkg")
+        print(f"Packaging family deck '{fam_deck_name}' with {len(fam_media)} media files -> {fam_filename}")
+        genanki.Package(fam_deck, fam_media).write_to_file(fam_filename)
     print("Per-family decks created.")
 
 if __name__ == "__main__":
